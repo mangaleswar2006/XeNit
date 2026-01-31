@@ -56,30 +56,6 @@ XeNit AI/
           - urllib (Network requests for blocklists)
           - json (Memory and persistent storage)
 
-Prerequisites
-Python 3.10 or higher installed.
-A working microphone/speaker for voice features.
-Installation Steps
-Clone the Repository
-
-git clone <repository_url>
-cd XeNit_AI
-Create a Virtual Environment (Recommended)
-
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Mac/Linux:
-source .venv/bin/activate
-Install Dependencies
-
-pip install PyQt6 PyQt6-WebEngine SpeechRecognition pyttsx3 pyaudio openai
-Note: If pyaudio fails on Windows, you may need to install pipwin then pipwin install pyaudio.
-
-Run the Application
-
-python main.py
-3. AI Tools Used
 
 ## Setup Instructions
   Prerequisites
