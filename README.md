@@ -117,6 +117,19 @@ XeNit AI/
 ## Final Output / Deliverable
   The final product is a fully functional, standalone web browser named "XeNit".
 
+
+## Source Code Structure
+main.py
+: Application bootstrapping and High-DPI scaling.
+browser/window.py
+: The "Body". Manages tabs, the toolbar, and the visual browser engine.
+browser/ai_agent.py
+: The "Brain". Handles the LLM loop and Action Tag parsing.
+browser/voice.py
+: The "Ears/Mouth". Background threads for listening and speaking.
+browser/adblock.py
+: The "Shield". Intercepts network requests to block ads.
+
 **Key Features:**
 
   - Futuristic UI: Neon-themed aesthetic with floating toolbars and smooth animations.
