@@ -39,27 +39,17 @@ XeNit AI redefines the browser as an **Active Agent**. It is not just a window t
 
 ## 2. Architecture Diagram
 
-The system follows a **Modular Agentic Architecture**, decoupling the GUI from the Intelligence Layer.
 
-```mermaid
-graph TD
-    User[User] <--> |Voice / Text| Sidebar[AI Sidebar UI]
-    Sidebar <--> |Task Delegation| Agent[AI Agent Core (Logic)]
-    
-    subgraph "Browser Environment (PyQt6)"
-        Agent -- "Controls" --> Controller[Agent Controller]
-        Controller -- "Actions (Open, Click, Inject JS)" --> Web[QtWebEngine (Chromium)]
-        Web -- "Page Context (HTML/URL)" --> Agent
-        Web -- "Network Traffic" --> AdBlock[AdBlocker Filter]
-    end
-    
-    subgraph "External Services & Data"
-        Agent <--> |Inference API| NVIDIA[NVIDIA NIM / OpenAI Llama 3.1]
-        Agent <--> |Read/Write| Memory[JSON Memory Store]
-    end
-```
 
----
+<img width="1328" height="677" alt="Screenshot 2026-02-01 031954" src="https://github.com/user-attachments/assets/25a481f5-994c-40a4-9de4-c6bba619aa31" />
+
+
+
+
+
+
+
+
 
 ## 3. Tech Stack & Rationale
 
