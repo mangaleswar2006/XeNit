@@ -1,0 +1,101 @@
+# XeNit AI Browser - Build & Reproducibility Instructions
+
+## Requirements
+- PyQt6
+- PyQt6-WebEngine
+- openai
+- SpeechRecognition
+- pyttsx3
+- pyaudio
+- pypiwin32
+
+This document outlines the mandatory steps to reproduce the build and run the XeNit AI Browser environment.
+
+## 1. System Requirements
+- **OS:** Windows 10/11 (Primary Support), macOS, or Linux.
+- **Python:** Python 3.10, 3.11, or 3.12.
+- **Hardware:** Microphone and Speakers (for Voice features), Internet Connection.
+
+## 2. Environment Setup (Clean Install)
+
+It is highly recommended to use a fresh virtual environment to avoid conflicts.
+
+### Step 2.1: Clone/Extract Project
+Ensure you are in the root directory of the project:
+```powershell
+cd "path\to\XeNit AI"
+```
+
+### Step 2.2: Create Virtual Global Environment
+```powershell
+python -m venv .venv
+```
+
+### Step 2.3: Activate Environment
+- **Windows (PowerShell):**
+  ```powershell
+  .\.venv\Scripts\Activate.ps1
+  ```
+- **Windows (CMD):**
+  ```cmd
+  .venv\Scripts\activate.bat
+  ```
+- **Mac/Linux:**
+  ```bash
+  source .venv/bin/activate
+  ```
+
+## 3. Dependency Installation
+
+Install the required Python packages using the generated requirements file.
+
+### Option A: Using requirements.txt (Recommended)
+```powershell
+pip install -r requirements.txt
+```
+
+### Option B: Manual Installation (If option A fails)
+```powershell
+pip install PyQt6 PyQt6-WebEngine openai SpeechRecognition pyttsx3 pyaudio
+```
+
+**Troubleshooting Audio on Windows:**
+If `pyaudio` fails to install with a "Wheel" error:
+1.  `pip install pipwin`
+2.  `pipwin install pyaudio`
+3.  Or download the .whl manually from [Christoph Gohlke's libs](https://www.lfd.uci.edu/~gohlke/pythonlibs/).
+
+## 4. Configuration (API Keys)
+The AI features require an LLM provider.
+1.  Open `browser/ai_agent.py`.
+2.  Locate the OpenAI Client initialization.
+3.  Ensure your **NVIDIA NIM** or **OpenAI** API key is set in the `api_key` field or as an environment variable `NVIDIA_API_KEY`.
+    *   *Default configuration uses a placeholder or local variable which must be updated for the AI to reply.*
+
+## 5. Execution
+Run the main application entry point:
+```powershell
+python main.py
+```
+
+## 6. Verification Checklist
+- [ ] Browser window opens with the "XeNit" Neon UI.
+- [ ] Sidebar can be toggled via the Menu or specific buttons.
+- [ ] Microphone icon appears in the AI Sidebar.
+- [ ] Pages load correctly (e.g., YouTube, Google).
+- [ ] AdBlocker prints "AdBlock Logic Fully Armed" in the console.
+
+## 7. Folder Structure
+```
+XeNit AI/
+├── browser/               # Core Source Code
+│   ├── adblock.py         # AdBlock Engine
+│   ├── ai_agent.py        # LLM Integration
+│   ├── sidebar.py         # Chat & Voice UI
+│   ├── window.py          # Main GUI & Browser Engine
+│   └── voice.py           # Speech Processing
+├── main.py                # Entry Point
+├── requirements.txt       # Dependency List
+├── xenit_memory.json      # User Persistent Data
+└── README.md              # This file
+```
