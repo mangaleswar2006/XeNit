@@ -115,7 +115,7 @@ XeNit AI/
 
 
 ## Final Output / Deliverable
-  The final product is a fully functional, standalone web browser named "XeNit AI".
+  The final product is a fully functional, standalone web browser named "XeNit".
 
 **Key Features:**
 
